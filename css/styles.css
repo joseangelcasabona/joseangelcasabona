@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-image: url('../assets/FondoGEMINI.jpg'); /* ruta relativa a tu imagen */
+  background-size: cover;           /* que cubra toda la pantalla */
+  background-position: center;      /* centrada */
+  background-attachment: fixed;     /* que se quede quieta al hacer scroll */
+  background-repeat: no-repeat;
+  color: #fff;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Contenedor horizontal y ventanas--------------------------------------------------------------------------*/
+.escritorio {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.escritorio::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ventanas flotantes 1 a 1 */
+.ventana {
+  scroll-snap-align: start;
+  flex: 0 0 100vw;
+  height: calc(100vh - 90px); /* deja espacio para el dock */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Bloque visible con blur dentro de la misma ventana */
+.ventana::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  z-index: -1; 
+}
+
+/* BARRA SUPERIOR ESTILO SISTEMA */
+.barra-superior {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 15px;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.acciones-ventana {
+  display: flex;
+  gap: 12px;
+}
+
+.acciones-ventana span {
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.acciones-ventana span:hover {
+  transform: scale(1.2);
+}
+
+.acciones-ventana .min:hover { color: #ffcb6b; }
+.acciones-ventana .max:hover { color: #34c84a; }
+.acciones-ventana .close:hover { color: #ff5f57; }
+
+
+/*Menu Inicio-----------------------------------------------------------------------------------------------------*/
+.contenido-inicio {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10%;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.contenido-inicio h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.contenido-inicio h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1rem;
+}
+
+.contenido-inicio p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+}
+
+.botones-inicio {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.botones-inicio button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.botones-inicio button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+
+/*Estilo de la barra de navegación--------------------------------------------------------------------------------*/
+.barra-tareas {
+  position: fixed;
+  bottom: 30px; /* separado del borde inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0;
+  border-radius: 30px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.barra-tareas button {
+  background: transparent;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
+}
+
+.barra-tareas button:last-child {
+  border-right: none;
+}
+
+.barra-tareas button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.barra-tareas i {
+  font-size: 1.5rem;
+}
+
+/*Paginacion------------------------------------------------------------------------------------------------------*/
+.paginacion {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.punto {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.punto.activo {
+  background: rgba(255, 255, 255, 0.9);
+}
