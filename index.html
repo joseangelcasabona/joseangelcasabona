@@ -20,16 +20,32 @@
                 </div>
             </div>
             <div class="contenido-inicio">
-                <img src="assets/me.png" alt="Avatar" class="avatar" />
-                <h1>José Ángel Casabona Andrés</h1>
-                <h2>Desarrollador Web</h2>
-                <p>
-                    Apasionado por crear experiencias web limpias, dinámicas y funcionales.<br>
-                    Enfocado en front-end, pero con amor por el código bien hecho en cualquier capa.
-                </p>
-                <div class="botones-inicio">
-                    <button><i class="fab fa-linkedin-in"></i></button>
-                    <button><i class="fab fa-github"></i></button>
+                <div class="avatar">
+                    <img src="assets/me.png" alt="Avatar" />
+                </div>
+                <div class="info-box">
+                    <div class="info">
+                        <h1>José Ángel Casabona Andrés</h1>
+                        <h2><span id="titulo-animado"></span></h2>
+                    </div>
+                    <div class="descripcion">
+                        <p>Apasionado por crear experiencias web limpias, dinámicas y funcionales.</p>
+                        <p>Enfocado en todos los aspectos de la programación.</p>
+                    </div>
+                </div>
+                <div class="botones-sociales">
+                    <button>
+                        <a href="https://www.linkedin.com/in/jos%C3%A9-%C3%A1ngel-casabona-andr%C3%A9s-a1b7362a4/" target="_blank"><img src="assets/ICONS/linkedin.png" alt="LinkedIn" /></a>
+                        <span class="tooltip">LinkedIn</span>
+                    </button>
+                    <button>
+                        <a href="https://github.com/joseangelcasabona" target="_blank"><img src="assets/ICONS/github.png" alt="GitHub" /></a>
+                        <span class="tooltip">GitHub</span>
+                    </button>
+                    <button>
+                        <a href="assets/CV José Ángel Casabona.pdf" target="_blank"><img src="assets/ICONS/CV.png" alt="CV" /></a>
+                        <span class="tooltip">CV</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -93,10 +109,22 @@
     </div>
 
     <nav class="barra-tareas">
-        <button onclick="irA('home')"><i class="fas fa-house"></i></button>
-        <button onclick="irA('conocimientos')"><i class="fas fa-book-open-reader"></i></button>
-        <button onclick="irA('proyectos')"><i class="fas fa-laptop-code"></i></button>
-        <button onclick="irA('contacto')"><i class="fas fa-envelope"></i></button>
+        <button onclick="irA('home')">
+            <img src="assets/ICONS/HOME.png" alt="Home" />
+            <span class="tooltip">Inicio</span>
+        </button>
+        <button onclick="irA('conocimientos')">
+            <img src="assets/ICONS/CONOCIMIENTOS.png" alt="Conocimientos" />
+            <span class="tooltip">Conocimientos</span>
+        </button>
+        <button onclick="irA('proyectos')">
+            <img src="assets/ICONS/PROYECTOS.png" alt="Proyectos" />
+            <span class="tooltip">Proyectos</span>
+        </button>
+        <button onclick="irA('contacto')">
+            <img src="assets/ICONS/CONTACTO.png" alt="Contactos" />
+            <span class="tooltip">Contacto</span>
+        </button>
     </nav>
 
     <div class="paginacion">
