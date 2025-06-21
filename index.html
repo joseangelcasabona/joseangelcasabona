@@ -21,7 +21,7 @@
             </div>
             <div class="contenido-inicio">
                 <div class="avatar">
-                    <img src="assets/me.png" alt="Avatar" />
+                    <img src="assets/MEMOJI2.png" alt="Avatar" />
                 </div>
                 <div class="info-box">
                     <div class="info">
@@ -62,14 +62,44 @@
                 </div>
             </div>
             <div class="contenido-conocimientos">
-                <div class="grid-formacion">
-                    <div class="bloque bloque-smr">Grado Medio<br><span>SMR</span></div>
-                    <div class="bloque bloque-dam">Grado Superior<br><span>DAM</span></div>
-                    <div class="avatar-central">
-                        <img src="assets/me.png" alt="Avatar" />
-                    </div>
-                    <div class="bloque bloque-daw">Grado Superior<br><span>DAW</span></div>
-                    <div class="bloque bloque-extra">Habilidades<br><span>Extra</span></div>
+                <div class="bloque bloque-smr">
+                    <h2>Grado Medio Sistemas Microinformáticos y Redes</h2></br>
+                    <ul>
+                        <li>Reparación y mantenimiento de PCs</li>
+                        <li>Redes locales e internet</li>
+                        <li>Instalación de sistemas operativos</li>
+                        <li>Gestión básica de servidores y copias de seguridad</li>
+                    </ul>
+                </div>
+                <div class="bloque bloque-dam">
+                    <h2>Grado Superior Desarrollo de Aplicaciones Multiplataforma</h2></br>
+                    <ul>
+                        <li>Java, C#</li>
+                        <li>SQLite, MySQL, Firebase</li>
+                        <li>Desarrollo de apps Android</li>
+                        <li>Desarrollo de videojuegos 2D, 3D y VR en Unity</li>
+                    </ul>
+                </div>
+                <div class="contenedor-avatar">
+                    <img src="assets/MEMOJI4.png" class="avatarAnimado" alt="Avatar" />
+                </div>
+                <div class="bloque bloque-daw">
+                    <h2>Grado Superior Desarrollo Web</h2></br>
+                    <ul>
+                        <li>HTML5, CSS3, JavaScript</li>
+                        <li>PHP, MySQL, XAMPP</li>
+                        <li>jQuery, AJAX, SASS</li>
+                        <li>Login, CRUD, validaciones y despliegue en servidor</li>
+                    </ul>
+                </div>
+                <div class="bloque bloque-extra">
+                    <h2>Conocimientos</h2></br>
+                    <ul>
+                        <li>Python y C# autodidacta</li>
+                        <li>Diseño visual y UI (Figma, Canva)</li>
+                        <li>Control de versiones con GitHub</li>
+                        <li>Experimentos con APIs, bots, scripts...</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -82,14 +112,44 @@
                     <span class="close"><i class="fas fa-times"></i></span>
                 </div>
             </div>
-            <div class="contenido">
-                <ul>
-                    <li><strong>Taskify</strong> – App web de tareas con login y almacenamiento local. (HTML, CSS, JS)
-                    </li>
-                    <li><strong>PixelGames</strong> – Tienda retro con carrito de compras usando jQuery. (Proyecto DAW)
-                    </li>
-                    <li><strong>FixCenter</strong> – Plataforma de gestión de tickets tipo helpdesk. (PHP + MySQL)</li>
-                </ul>
+            <div class="contenido-proyectos">
+                <div class="proyecto proyecto-izq">
+                    <h2>The Little Explorer</h2>
+                    <p>Videojuego de plataformas, educativo y con niveles de diferente estilo desarrollado en Unity.
+                        Controla a nuestro pequeño explorador en un
+                        mundo lleno de peligros, misterios, enemigos y niveles progresivos.</p>
+                    <ul>
+                        <li>🎮 Hecho con C# y motor Unity</li>
+                        <li>🌍 Niveles diseñados desde cero con tilesets</li>
+                        <li>🎧 Música, efectos y animaciones personalizadas</li>
+                    </ul>
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/bNikg1VuXFA" title="The Little Explorer"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="contenedor-avatar">
+                    <img src="assets/MEMOJI3.png" class="avatarAnimado" alt="avatar">
+                </div>
+
+                <div class="proyecto proyecto-der">
+                    <h2>Tick-It</h2>
+                    <p>Plataforma web de gestión de tickets para soporte técnico. Permite a los usuarios registrar
+                        incidencias, hacer seguimiento y recibir notificaciones por correo. Proyecto final del ciclo
+                        DAW.</p>
+                    <ul>
+                        <li>💻 Desarrollado en PHP + MySQL</li>
+                        <li>🔐 Sistema de login, roles y permisos</li>
+                        <li>📬 Notificaciones automáticas por email</li>
+                    </ul>
+                    <div class="imagen-embed">
+                        <img src="assets/tickit-captura.png" alt="Captura de Tick-It">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -105,7 +165,9 @@
                 <!-- Bloque izquierdo superior -->
                 <div class="bloque-contacto info-contacto">
                     <h3>Contactame</h3>
-                    <p>Email: <span id="email">joseangelcasabona@gmail.com</span> <button onclick="copiarEmail()">📋</button>
+                    <p>
+                        <span id="email">joseangelcasabona@gmail.com</span>
+                        <button onclick="copiarEmail()"><i class="fas fa-copy"></i></button>
                     </p>
                     <div class="redes">
                         <a href="#" target="_blank"><img src="assets/ICONS/linkedin.png" alt="LinkedIn" /></a>
@@ -115,8 +177,8 @@
                 </div>
 
                 <!-- Bloque izquierdo inferior -->
-                <div class="bloque-contacto avatar-contacto">
-                    <img src="assets/me.png" alt="Avatar" />
+                <div class="contenedor-avatar">
+                    <img src="assets/MEMOJI1.png" class="avatarAnimado" alt="Avatar" />
                 </div>
 
                 <!-- Bloque derecho: formulario -->
