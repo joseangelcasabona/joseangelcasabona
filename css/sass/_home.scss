@@ -1,0 +1,152 @@
+.contenido-inicio {
+  width: 90%;
+  height: 90%;
+  margin-top: 40px;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  color: #fff;
+
+  overflow-y: auto; /* 👈 habilita scroll vertical */
+  scroll-behavior: smooth; /* opcional, para que sea suave */
+}
+
+/*AVATAR*/
+.avatar {
+  margin-top: 15px;
+}
+
+.avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/*INFO*/
+.info-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+  max-width: 650px;
+  width: 90%;
+}
+
+.info-box h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+#titulo-animado {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1.5rem;
+  border-right: 2px solid #fff;
+  padding-right: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.info-box p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/*BOTONES*/
+.botones-sociales {
+  margin-top: 30px;
+}
+
+.botones-sociales button {
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+//Para definir el margen de los otros dos botones
+.botones-sociales .central {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.botones-sociales button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.botones-sociales img {
+  width: 50px;
+  height: 50px;
+}
+
+
+@media (max-width: 768px) {
+  .contenido-inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 1rem;
+    height: 90%;
+    width: 100%;
+    overflow-y: auto; /* 👈 habilita scroll vertical */
+    scroll-behavior: smooth; /* opcional, para que sea suave */
+  }
+
+  .botones-sociales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .botones-sociales button {
+    flex: 1 1 40%;
+    max-width: 130px;
+  }
+
+  .botones-sociales button:nth-child(3) {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .botones-sociales .central {
+    margin: 0; /* quitar margen lateral si lo tenías */
+  }
+
+  #titulo-animado {
+    white-space: normal;        /* Permite saltos de línea */
+    word-break: break-word;     /* Corta palabras largas si hace falta */
+  }
+}

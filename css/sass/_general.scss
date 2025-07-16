@@ -1,0 +1,129 @@
+* {
+  //Eliminar margenes y espacios
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  -ms-overflow-style: none; //IExplorer/Edge
+  scrollbar-width: none; //Firefox
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", sans-serif;
+  background-image: url("../assets/FondoGEMINI.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; //Cuando haces scroll el fondo no se mueve
+  background-repeat: no-repeat;
+  color: #fff;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Contenedor horizontal (Base de la web)*/
+.escritorio {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: auto; //Impide desplazamiento vertical
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; //Impide desplazamiento vertical
+}
+
+*::-webkit-scrollbar {
+  //Quitar barra de scroll Chrome
+  display: none;
+}
+
+/*Ajustes de las ventanas de contenido*/
+.ventana {
+  scroll-snap-align: start; //Punto de anclaje para el scroll
+  flex: 0 0 100vw; //Hace que ocupe una ventana por pantalla
+  height: calc(100vh - 90px); //Deja hueco para el dock
+  display: flex; //Para el interior de las ventanas
+  flex-direction: column;
+  align-items: center; //Centra horinzontalmente
+  justify-content: center; //Centra verticalmente
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative; //Para posicionar el before
+}
+
+//Esto crea el efecto decorativo del cristal
+.ventana::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px); //Efecto borroso
+  -webkit-backdrop-filter: blur(15px); //Efecto borroso para otros navegadores
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+/* BARRA SUPERIOR ESTILO SISTEMA */
+.barra-superior {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 15px;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.acciones-ventana {
+  display: flex;
+  gap: 12px;
+}
+
+.acciones-ventana span {
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.acciones-ventana span:hover {
+  transform: scale(1.2);
+}
+
+.acciones-ventana .min:hover {
+  color: #ffcb6b;
+}
+
+.acciones-ventana .max:hover {
+  color: #34c84a;
+}
+
+.acciones-ventana .close:hover {
+  color: #ff5f57;
+}
+
+//Animación de las imagenes
+.avatarAnimado{
+  transition: transform 0.4s ease;
+}
+
+.avatarAnimado:hover{
+  animation: rebote 0.8s ease;
+}
+
+@keyframes rebote {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(20px);}
+  100% {transform: translateY(0);}
+}
